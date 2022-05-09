@@ -2,7 +2,7 @@
 Page({
     data: {
         rootList: [], // 展示的 root
-        showNumInOnePage: 3, // 每页展示的数量
+        showNumInOnePage: 5, // 每页展示的数量
         curPage: 1, // 当前页
         pageNum: 1, // 总页数
         total: 1, // root 总数

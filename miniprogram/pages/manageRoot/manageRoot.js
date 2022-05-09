@@ -27,7 +27,7 @@ Page({
         /* 控制页数 */
         pageNum: 1, // 总页数
         curPage: 1, // 当前页
-        showNumInOnePage: 3, // 一页展示的数量
+        showNumInOnePage: 10, // 一页展示的数量
         userList: [], // 展示的用户
         /* 日历 */
         date: "",
