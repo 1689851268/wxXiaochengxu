@@ -65,7 +65,7 @@ Page({
                     method: "POST",
                     header: { "content-type": "application/json" },
                     data: {
-                        recipient: this.data.phone,
+                        recipient: this.data.superRootPhone,
                         clientId: "55a858cc9db2491ead2a3f23e7cb0681",
                         clientSecret: "bc4c687efeb24adf97731902b44c9f5b",
                     },
