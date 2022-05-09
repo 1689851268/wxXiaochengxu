@@ -1,0 +1,40 @@
+<!--pages/addRoot/addRoot.wxml-->
+<view wx:if="{{invitationCode}}" class="tip">
+	<van-icon name="checked" />
+	添加成功，该管理员的邀请码是
+	<view class="invitationCode">{{invitationCode}}</view>
+	<van-button type="primary" bind:click="jumpBack">
+		返回
+	</van-button>
+</view>
+<view wx:else>
+	<view class="info">
+		<van-cell-group inset>
+			<van-field model:value="{{rootName}}" placeholder="请输入管理员姓名" clearable bind:input="checkName" />
+			<van-field model:value="{{rootPhone}}" placeholder="请输入管理员手机号" clearable type="number" maxlength="11" bind:input="checkPhone" data-identity="root" />
+			<van-field model:value="{{superRootPhone}}" placeholder="请输入您的手机号" clearable type="number" maxlength="11" bind:input="checkPhone" data-identity="superRoot" />
+			<van-field model:value="{{sms}}" placeholder="请输入短信验证码" clearable type="number" use-button-slot maxlength="6" bind:input="checkSms">
+				<van-button slot="button" size="small" type="primary" plain round bind:click="getSms" disabled="{{!(rootName && rootPhoneOk && superRootPhoneOk) || smsTime}}">
+					<text wx:if="{{smsTime}}">{{smsTime}}s</text>
+					<text wx:else>获取验证码</text>
+				</van-button>
+			</van-field>
+		</van-cell-group>
+	</view>
+
+	<view class="authentication">
+		<van-button type="primary" disabled="{{!(rootName && rootPhoneOk && superRootPhoneOk && smsOk)}}" block bind:click="addRoot">
+			添加管理员
+		</van-button>
+	</view>
+</view>
+
+<!-- 
+创建新 root
+1. 填写 root 的 name & phone
+2. 填写 superRoot 的 phone 获取验证码
+3. 添加新 root 到数据库；初始化属性：
+	identity: "root"
+	invitationCode: ""
+	orderInfo: { all:0, waiting:0, flunk:0, pass:0, repay:0, repay_fail:0, repay_success:0 }
+-->

@@ -1,0 +1,10 @@
+.container {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    row-gap: 20rpx;
+    padding: 20rpx;
+    margin: 20rpx;
+    border-radius: 20rpx;
+}

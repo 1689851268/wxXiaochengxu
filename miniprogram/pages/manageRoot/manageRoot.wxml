@@ -1,0 +1,71 @@
+<van-dropdown-menu active-color="rgb(7, 193, 96)">
+	<van-dropdown-item value="{{orderVal}}" options="{{order}}" bind:change="changeOrder" />
+	<van-dropdown-item value="{{sortVal}}" options="{{sort}}" bind:change="changeSort" bindtap="selectTime" />
+</van-dropdown-menu>
+
+<!-- 展示数据 -->
+<view wx:if="{{userList.length == 0}}" class="nullTips">没有数据噢~</view>
+<view wx:else>
+	<view class="content_list" wx:for="{{userList}}" wx:key="index">
+		<view class="content">
+			<van-cell-group inset>
+				<!-- 用户信息 -->
+				<van-cell title="{{item.name}}-{{item.phone}}" value="{{fmt.fmtState(item.state, item.reimbursement)}}" label="{{fmt.fmtTime(item.applyDate)}}" is-link="{{item.state !== 'pass' && item.state !== 'repay_success'}}" data-index="{{index}}" bind:click="onClickShow" />
+				<!-- waiting 和 repay → 审批页 -->
+				<!-- flunk、repay_fail → 遮罩层 - 不通过的原因 -->
+				<van-overlay wx:if="{{item.state == 'flunk' || item.state == 'repay_fail'}}" show="{{item.showMask}}">
+					<view class="orderScreenshot">
+						<view class="reason">
+							驳回原因：
+							<text wx:if="{{item.state == 'flunk'}}">{{item.flunkReason}}</text>
+							<text wx:else>{{item.failReason}}</text>
+						</view>
+						<view class="push_pic_btn">
+							<van-button class="pic_btn" type="primary" plain size="small" bind:click="onClickHide">确认</van-button>
+							<van-button class="pic_btn" type="danger" plain size="small" bind:click="onClickHide">取消</van-button>
+						</view>
+					</view>
+				</van-overlay>
+			</van-cell-group>
+		</view>
+	</view>
+	<!-- 分页器 -->
+	<pager total="{{total}}" showNumInOnePage="{{showNumInOnePage}}" curPage="{{curPage}}" pageNum="{{pageNum}}" bindchange="changePage"></pager>
+</view>
+
+<!-- 日历 -->
+<van-calendar show="{{calendar}}" bind:close="closeCalendar" bind:confirm="onConfirm" type="range" allow-same-day color="rgb(7, 193, 96)" confirm-disabled-text="请选择结束时间" show-mark />
+
+<!-- wxs -->
+<wxs module="fmt">
+	module.exports = {
+		/* 格式化时间 */
+		fmtTime: function (strTime) {
+			var time = getDate(+strTime).toLocaleString();
+			return time;
+		},
+		/* 格式化状态 */
+		fmtState: function (state, reimbursement) {
+			switch (state) {
+				case "waiting":
+					return "待审批"
+					break;
+				case "flunk":
+					return "未过审"
+					break;
+				case "pass":
+					return "已过审"
+					break;
+				case "repay":
+					return "等待报销"
+					break;
+				case "repay_fail":
+					return "报销失败"
+					break;
+				case "repay_success":
+					return reimbursement + '￥'
+					break;
+			}
+		}
+	}
+</wxs>

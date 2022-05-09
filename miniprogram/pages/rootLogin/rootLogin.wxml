@@ -1,0 +1,25 @@
+<view class="option" wx:if="{{showOption}}">
+	<van-button type="primary" block bind:click="jump" data-option="add"> 新增管理员 </van-button>
+	<van-button type="primary" block bind:click="jump" data-option="set"> 设置权限 </van-button>
+	<van-button type="primary" block bind:click="jump" data-option="examine"> 查看用户 </van-button>
+</view>
+
+<view wx:else>
+	<view class="rootData">
+		<van-cell-group inset>
+			<van-field model:value="{{phone}}" placeholder="请输入手机号" clearable type="number" maxlength="11" bind:input="checkPhone" />
+			<van-field model:value="{{sms}}" placeholder="请输入短信验证码" clearable type="number" use-button-slot maxlength="6" bind:input="checkSms">
+				<van-button slot="button" size="small" type="primary" plain round bind:click="getSms" disabled="{{!phoneOk || smsTime}}">
+					<text wx:if="{{smsTime}}">{{smsTime}}s</text>
+					<text wx:else>获取验证码</text>
+				</van-button>
+			</van-field>
+		</van-cell-group>
+	</view>
+
+	<view class="authentication">
+		<van-button type="primary" disabled="{{!(phoneOk && smsOk)}}" block bind:click="authentication">
+			登陆
+		</van-button>
+	</view>
+</view>

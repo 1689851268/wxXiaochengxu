@@ -1,0 +1,9 @@
+.pager {
+    display: flex;
+    padding: 20rpx;
+    justify-content: space-between;
+}
+
+.pager .pageNum {
+    border: 1px solid #999;
+}

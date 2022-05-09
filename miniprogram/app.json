@@ -1,0 +1,20 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/rootLogin/rootLogin",
+        "pages/rootManage/rootManage",
+        "pages/manageRoot/manageRoot",
+        "pages/examine/examine",
+        "pages/setPermission/setPermission",
+        "pages/addRoot/addRoot",
+        "pages/superRootManage/superRootManage"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "QuickCheck",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
+}

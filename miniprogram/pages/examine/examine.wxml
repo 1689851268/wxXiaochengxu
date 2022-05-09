@@ -1,0 +1,26 @@
+<!-- 用户填写的信息 -->
+<view class="userInfo">
+	<view wx:if="{{state == 'waiting'}}">
+		<view>{{name}}</view>
+		<view>{{phone}}</view>
+	</view>
+	<image src="{{screenshotID}}" mode="aspectFill" bindtap="preview"></image>
+</view>
+
+<!-- 审批按钮 -->
+<view class="examine">
+	<van-button type="primary" plain bind:click="operation" data-op="passIt">通过</van-button>
+	<van-button type="danger" plain bind:click="operation" data-op="denyIt">驳回</van-button>
+</view>
+
+<!-- 填写 "驳回原因" / "报销金额" -->
+<van-popup show="{{ show }}" round>
+	<view class="operation">
+		<textarea class="operationInfo" type="text" placeholder="{{placeholder}}" bindinput="updateInfo" value="{{info}}"></textarea>
+
+		<view class="examine">
+			<van-button type="primary" plain bind:click="submitInfo">确认</van-button>
+			<van-button type="danger" plain bind:click="onClose">取消</van-button>
+		</view>
+	</view>
+</van-popup>

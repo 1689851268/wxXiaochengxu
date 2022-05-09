@@ -1,0 +1,48 @@
+/* 进入系统的按钮 */
+.btn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rootBtn {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    color: #999;
+    transform: translate(-50%);
+}
+
+/* 用户信息 */
+.user_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+/* 用户头像 */
+.user_avatar {
+    margin: 20rpx 0;
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 50%;
+}
+
+/* 用户输入的信息 */
+.info_box {
+    padding: 0 20rpx;
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+/* 用户上传的截图 */
+.img_box {
+    margin: 30rpx 0 20rpx;
+}
+
+/* 验证身份 */
+.authentication {
+    padding: 0 20px;
+}

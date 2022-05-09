@@ -1,0 +1,17 @@
+<!-- 修改权限 -->
+
+<!-- 展示数据 -->
+<view class="container" wx:for="{{rootList}}" wx:key="index" bindtap="goRootPage" data-phone="{{item.phone}}">
+	<view>{{item.name}}</view>
+	<view>{{item.phone}}</view>
+	<view>总人数：{{item.orderInfo.all}}</view>
+	<view>待审批：{{item.orderInfo.waiting}}</view>
+	<view>未过审：{{item.orderInfo.flunk}}</view>
+	<view>已过审：{{item.orderInfo.pass}}</view>
+	<view>等待报销：{{item.orderInfo.repay}}</view>
+	<view>报销失败：{{item.orderInfo.repay_fail}}</view>
+	<view>报销成功：{{item.orderInfo.repay_success}}</view>
+</view>
+
+<!-- 分页器 -->
+<pager total="{{total}}" showNumInOnePage="{{showNumInOnePage}}" curPage="{{curPage}}" pageNum="{{pageNum}}" bindchange="changePage"></pager>

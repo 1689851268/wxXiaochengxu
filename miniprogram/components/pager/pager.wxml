@@ -1,0 +1,7 @@
+<view class="pager" wx:if="{{total >= showNumInOnePage}}">
+	<button size="mini" disabled="{{curPage == 1}}" bindtap="changePage" data-cur="1">首页</button>
+	<button size="mini" disabled="{{curPage == 1}}" bindtap="changePage" data-cur="up">上一页</button>
+	<button size="mini" class="pageNum">{{curPage}} / {{pageNum}}</button>
+	<button size="mini" disabled="{{curPage == pageNum}}" bindtap="changePage" data-cur="down">下一页</button>
+	<button size="mini" disabled="{{curPage == pageNum}}" bindtap="changePage" data-cur="{{pageNum}}">尾页</button>
+</view>

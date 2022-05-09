@@ -1,0 +1,23 @@
+.info {
+    margin-top: 50px;
+}
+
+.authentication {
+    padding: 0 30rpx;
+    margin-top: 20px;
+}
+
+.tip {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.invitationCode {
+    color: #f40;
+    font-size: 20px;
+    margin: 20px 0;
+}

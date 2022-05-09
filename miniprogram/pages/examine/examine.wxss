@@ -1,0 +1,38 @@
+/* 用户提交的信息 */
+.userInfo {
+    text-align: center;
+    margin-top: 50rpx;
+    padding: 40rpx;
+}
+
+.userInfo view {
+    margin: 20rpx 0;
+}
+
+image {
+    background-color: #eee;
+    width: 380rpx;
+    height: 380rpx;
+}
+
+/* 审批按钮 */
+.examine {
+    text-align: center;
+}
+
+.examine van-button {
+    margin: 20rpx;
+}
+
+/* 驳回原因 */
+.operation {
+    padding: 30px;
+}
+
+.operationInfo {
+    width: 300rpx;
+    margin-bottom: 30rpx;
+    border: #eee 1px solid;
+    border-radius: 20rpx;
+    padding: 10px;
+}

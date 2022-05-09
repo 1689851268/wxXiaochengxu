@@ -1,0 +1,26 @@
+.dataBox {
+    margin-top: 100rpx;
+}
+
+.setPermission {
+    padding: 0 30rpx;
+}
+
+.setPermission van-button {
+    margin: 10px;
+}
+
+.tipBox {
+    padding: 20px;
+}
+
+.warning {
+    text-align: center;
+    color: #f40;
+}
+
+.btnBox {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,19 @@
+.rootData {
+    margin-top: 300rpx;
+}
+
+.authentication {
+    padding: 0 30rpx;
+    margin-top: 20px;
+}
+
+.option {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.option van-button {
+    margin: 30rpx;
+}

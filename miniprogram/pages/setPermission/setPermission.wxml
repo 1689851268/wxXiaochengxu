@@ -1,0 +1,35 @@
+<!-- 填写的信息 -->
+<view class="dataBox">
+	<van-cell-group inset>
+		<van-field model:value="{{userPhone}}" placeholder="请输入需要设置权限的手机号" clearable type="number" maxlength="11" bind:input="checkPhone" data-identity="user" />
+		<van-field model:value="{{rootPhone}}" placeholder="请输入您的手机号" clearable type="number" maxlength="11" bind:input="checkPhone" data-identity="root" />
+		<van-field model:value="{{sms}}" placeholder="请输入短信验证码" clearable type="number" use-button-slot maxlength="6" bind:input="checkSms">
+			<van-button slot="button" size="small" type="primary" plain round bind:click="getSms" disabled="{{!(userphoneOk && rootphoneOk) || smsTime}}">
+				<text wx:if="{{smsTime}}">{{smsTime}}s</text>
+				<text wx:else>获取验证码</text>
+			</van-button>
+		</van-field>
+	</van-cell-group>
+</view>
+
+<!-- 设置权限 -->
+<view class="setPermission">
+	<van-button type="primary" block bind:click="setPermission" disabled="{{!(userphoneOk && rootphoneOk && smsOk)}}" data-identity="root">
+		设为管理员
+	</van-button>
+	<van-button type="primary" block bind:click="setPermission" disabled="{{!(userphoneOk && rootphoneOk && smsOk)}}" data-identity="user">
+		取消管理员
+	</van-button>
+</view>
+
+<!-- 遮罩层 → 是否新增管理员 -->
+<van-popup show="{{ show }}">
+	<view class="tipBox">
+		<view class="warning">系统中没有该用户！</view>
+		<view>是否新增用户，并将其设置为管理员？</view>
+		<view class="btnBox">
+			<van-button type="primary" size="small" plain bind:click="addNewRoot">确定</van-button>
+			<van-button type="primary" size="small" plain bind:click="onClose">取消</van-button>
+		</view>
+	</view>
+</van-popup>
