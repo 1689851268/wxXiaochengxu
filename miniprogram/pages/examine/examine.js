@@ -9,7 +9,7 @@ Page({
         /* 控制遮罩层 */
         show: false,
         info: "", // 审批不通过的原因
-        placeholder: "123123123",
+        placeholder: "",
     },
 
     // 预览图片
@@ -136,7 +136,7 @@ Page({
         }
     },
 
-    //  监听页面加载
+    // 页面展示时触发
     onLoad(options) {
         // 初始化数据
         let { name, phone, screenshotID, invitationCode, state } = options;

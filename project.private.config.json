@@ -5,8 +5,8 @@
 			"list": [
 				{
 					"name": "",
-					"pathName": "pages/rootManage/rootManage",
-					"query": "phone=13360777160",
+					"pathName": "pages/examine/examine",
+					"query": "name=HZP&phone=13164845684&screenshotID=cloud://cloud1-2gigdheo4aa59fdc.636c-cloud1-2gigdheo4aa59fdc-1309717558/1A2B3C/13164845684-order.png",
 					"launchMode": "default",
 					"scene": null
 				}

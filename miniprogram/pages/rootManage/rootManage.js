@@ -99,7 +99,7 @@ Page({
         wx.cloud
             /* 上传图片 */
             .uploadFile({
-                cloudPath: `${rootUrl}/${phone}-order.png`,
+                cloudPath: `${rootUrl}/${phone}-${new Date().getTime()}.png`,
                 filePath: this.data.orderScreenshot[0].url,
             })
             /* 更新数据库的数据 */

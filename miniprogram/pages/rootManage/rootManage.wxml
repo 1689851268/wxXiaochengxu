@@ -23,7 +23,7 @@
 					</view>
 					<!-- pass、repay_fail、repay -->
 					<view class="orderScreenshot" wx:else>
-						<view class="flunk_reason">驳回原因：{{item.failReason}}</view>
+						<view class="flunk_reason" wx:if="{{item.failReason}}">驳回原因：{{item.failReason}}</view>
 						<van-uploader file-list="{{orderScreenshot}}" bind:after-read="afterRead" upload-text="上传订单截图" max-count="1" capture="album" image-fit="aspectFit" catch:delete="deleteImg" />
 						<view class="push_pic_btn">
 							<van-button class="pic_btn" type="primary" plain size="small" bind:click="submitPic" disabled="{{!orderScreenshot[0]}}" data-strInfo="{{item.phone}}-{{item.state}}">
