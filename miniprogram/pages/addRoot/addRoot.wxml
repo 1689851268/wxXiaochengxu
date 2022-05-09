@@ -13,7 +13,7 @@
 			<van-field model:value="{{rootName}}" placeholder="请输入管理员姓名" clearable bind:input="checkName" />
 			<van-field model:value="{{rootPhone}}" placeholder="请输入管理员手机号" clearable type="number" maxlength="11" bind:input="checkPhone" data-identity="root" />
 			<van-field model:value="{{superRootPhone}}" placeholder="请输入您的手机号" clearable type="number" maxlength="11" bind:input="checkPhone" data-identity="superRoot" />
-			<van-field model:value="{{sms}}" placeholder="请输入短信验证码" clearable type="number" use-button-slot maxlength="6" bind:input="checkSms">
+			<van-field model:value="{{sms}}" placeholder="请输入短信验证码" clearable type="text" use-button-slot maxlength="6" bind:input="checkSms">
 				<van-button slot="button" size="small" type="primary" plain round bind:click="getSms" disabled="{{!(rootName && rootPhoneOk && superRootPhoneOk) || smsTime}}">
 					<text wx:if="{{smsTime}}">{{smsTime}}s</text>
 					<text wx:else>获取验证码</text>

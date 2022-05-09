@@ -56,9 +56,9 @@ Page({
                     method: "POST",
                     header: { "content-type": "application/json" },
                     data: {
-                        recipient: this.data.phone,
+                        recipient: this.data.rootPhone,
                         clientId: "55a858cc9db2491ead2a3f23e7cb0681",
-                        clientSecret: "458645a3b4c243248572cd658be97b18",
+                        clientSecret: "bc4c687efeb24adf97731902b44c9f5b",
                     },
                     success: res => {
                         if (res.statusCode == 200) {
@@ -70,7 +70,7 @@ Page({
                             wx.hideLoading();
                         } else {
                             wx.showToast({
-                                title: "验证码获取失败",
+                                title: "验证码获取失败1",
                                 icon: "error",
                             });
                             console.log("验证码获取失败 - ", res);
@@ -78,7 +78,7 @@ Page({
                     },
                     fail: err => {
                         wx.showToast({
-                            title: "验证码获取失败",
+                            title: "验证码获取失败2",
                             icon: "error",
                         });
                         console.log("验证码获取失败 - ", err);

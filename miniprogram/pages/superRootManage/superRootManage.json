@@ -1,5 +1,7 @@
 {
     "usingComponents": {
         "pager": "../../components/pager/pager"
-    }
+    },
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
 }

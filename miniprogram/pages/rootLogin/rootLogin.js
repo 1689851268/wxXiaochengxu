@@ -54,7 +54,7 @@ Page({
                     data: {
                         recipient: this.data.phone,
                         clientId: "55a858cc9db2491ead2a3f23e7cb0681",
-                        clientSecret: "458645a3b4c243248572cd658be97b18",
+                        clientSecret: "bc4c687efeb24adf97731902b44c9f5b",
                     },
                     success: res => {
                         if (res.statusCode == 200) {
@@ -66,7 +66,7 @@ Page({
                             wx.hideLoading();
                         } else {
                             wx.showToast({
-                                title: "验证码获取失败",
+                                title: "验证码获取失败1",
                                 icon: "error",
                             });
                             console.log("验证码获取失败 - ", res);
@@ -74,7 +74,7 @@ Page({
                     },
                     fail: err => {
                         wx.showToast({
-                            title: "验证码获取失败",
+                            title: "验证码获取失败2",
                             icon: "error",
                         });
                         console.log("验证码获取失败 - ", err);
@@ -131,6 +131,9 @@ Page({
                 wx.navigateTo({
                     url: `../rootManage/rootManage?phone=${this.data.phone}`,
                 });
+                setTimeout(() => {
+                    this.clearData();
+                }, 1000);
             } else if (this.data.identity == "superRoot") {
                 this.setData({ showOption: true });
             }
@@ -155,12 +158,15 @@ Page({
                 url: `../addRoot/addRoot`,
             });
         }
-    },
-
-    // 页面隐藏 / 切入后台时触发
-    onHide() {
         setTimeout(() => {
             this.clearData();
         }, 1000);
     },
+
+    // 页面隐藏 / 切入后台时触发
+    // onHide() {
+    //     setTimeout(() => {
+    //         this.clearData();
+    //     }, 1000);
+    // },
 });

@@ -41,12 +41,6 @@ Page({
             .callFunction({ name: "getOpenid" })
             .then(res => {
                 this.setData({ openid: res.result });
-                /* 数据本地化 */
-                let { openid, userInfo } = this.data;
-                wx.setStorageSync(
-                    "userData", // key
-                    JSON.stringify({ openid, userInfo }) // value
-                );
                 wx.hideLoading();
             })
             .catch(err => {
@@ -100,7 +94,7 @@ Page({
                     data: {
                         recipient: this.data.phone,
                         clientId: "55a858cc9db2491ead2a3f23e7cb0681",
-                        clientSecret: "458645a3b4c243248572cd658be97b18",
+                        clientSecret: "bc4c687efeb24adf97731902b44c9f5b",
                     },
                     success: res => {
                         // 验证码获取成功 / 失败
@@ -239,15 +233,5 @@ Page({
         } else {
             wx.showToast({ title: "验证码错误", icon: "error" });
         }
-    },
-
-    // 页面加载时触发
-    onLoad() {
-        /* 从本地获取用户数据 */
-        let userData = JSON.parse(wx.getStorageSync("userData") || "{}");
-        this.setData({
-            openid: userData.openid || "",
-            userInfo: userData.userInfo || {},
-        });
     },
 });

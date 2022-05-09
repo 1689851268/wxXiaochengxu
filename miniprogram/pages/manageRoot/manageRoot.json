@@ -7,7 +7,9 @@
         "van-cell-group": "@vant/weapp/cell-group/index",
         "van-button": "@vant/weapp/button/index",
         "van-uploader": "@vant/weapp/uploader/index",
-		"pager": "../../components/pager/pager",
-		"van-calendar": "@vant/weapp/calendar/index"
-    }
+        "pager": "../../components/pager/pager",
+        "van-calendar": "@vant/weapp/calendar/index"
+    },
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
 }

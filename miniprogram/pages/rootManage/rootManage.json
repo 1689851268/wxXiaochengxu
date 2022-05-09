@@ -9,5 +9,7 @@
         "van-uploader": "@vant/weapp/uploader/index",
         "pager": "../../components/pager/pager",
         "van-calendar": "@vant/weapp/calendar/index"
-    }
+    },
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
 }

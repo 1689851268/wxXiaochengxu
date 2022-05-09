@@ -3,7 +3,7 @@
 	<van-cell-group inset>
 		<van-field model:value="{{userPhone}}" placeholder="请输入需要设置权限的手机号" clearable type="number" maxlength="11" bind:input="checkPhone" data-identity="user" />
 		<van-field model:value="{{rootPhone}}" placeholder="请输入您的手机号" clearable type="number" maxlength="11" bind:input="checkPhone" data-identity="root" />
-		<van-field model:value="{{sms}}" placeholder="请输入短信验证码" clearable type="number" use-button-slot maxlength="6" bind:input="checkSms">
+		<van-field model:value="{{sms}}" placeholder="请输入短信验证码" clearable type="text" use-button-slot maxlength="6" bind:input="checkSms">
 			<van-button slot="button" size="small" type="primary" plain round bind:click="getSms" disabled="{{!(userphoneOk && rootphoneOk) || smsTime}}">
 				<text wx:if="{{smsTime}}">{{smsTime}}s</text>
 				<text wx:else>获取验证码</text>

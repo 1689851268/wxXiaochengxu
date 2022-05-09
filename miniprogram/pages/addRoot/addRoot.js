@@ -67,7 +67,7 @@ Page({
                     data: {
                         recipient: this.data.phone,
                         clientId: "55a858cc9db2491ead2a3f23e7cb0681",
-                        clientSecret: "458645a3b4c243248572cd658be97b18",
+                        clientSecret: "bc4c687efeb24adf97731902b44c9f5b",
                     },
                     success: res => {
                         if (res.statusCode == 200) {

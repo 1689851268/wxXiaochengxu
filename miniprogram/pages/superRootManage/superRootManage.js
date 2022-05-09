@@ -83,4 +83,10 @@ Page({
         /* 获取(部分)数据 */
         this.getRoots();
     },
+
+    /* 下拉刷新 */
+    onPullDownRefresh() {
+        this.getRoots();
+        wx.stopPullDownRefresh();
+    },
 });

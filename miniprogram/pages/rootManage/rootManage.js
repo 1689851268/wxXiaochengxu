@@ -55,7 +55,9 @@ Page({
             date: `${this.formatDate(start)} - ${this.formatDate(end)}`,
         });
         end = end.getTime() + 1000 * 60 * 60 * 24;
-        this.getUsers([start.getTime(), end]);
+        start = start.getTime();
+        this.setData({ start, end });
+        this.getUsers([start, end]);
     },
 
     /* 拉起遮罩层 */
@@ -257,6 +259,14 @@ Page({
         this.setData({ phone: options.phone });
         /* 获取该 root 拉取的所有用户 */
         this.getUsers();
+    },
+
+    /* 下拉刷新 */
+    onPullDownRefresh() {
+        let { start, end } = this.data;
+        let timeArr = start ? [start, end] : [];
+        this.getUsers(timeArr);
+        wx.stopPullDownRefresh();
     },
 });
 /* 
