@@ -8,3 +8,9 @@
     margin: 20rpx;
     border-radius: 20rpx;
 }
+
+.nullTip {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}

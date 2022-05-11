@@ -1,6 +1,7 @@
 <!-- 修改权限 -->
 
 <!-- 展示数据 -->
+<view class="nullTip" wx:if="{{rootList.length == 0}}">还没有商家哦~</view>
 <view class="container" wx:for="{{rootList}}" wx:key="index" bindtap="goRootPage" data-phone="{{item.phone}}">
 	<view>{{item.name}}</view>
 	<view>{{item.phone}}</view>

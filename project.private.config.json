@@ -11,6 +11,13 @@
 					"query": "name=HZP&phone=13164845684&screenshotID=cloud://cloud1-2gigdheo4aa59fdc.636c-cloud1-2gigdheo4aa59fdc-1309717558/1A2B3C/13164845684-order.png",
 					"launchMode": "default",
 					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/superRootManage/superRootManage",
+					"query": "phone=13160968548",
+					"launchMode": "default",
+					"scene": null
 				}
 			]
 		}
