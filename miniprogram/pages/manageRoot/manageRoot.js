@@ -32,6 +32,7 @@ Page({
         /* 日历 */
         date: "",
         calendar: false,
+        minDate: new Date(2022, 4, 1).getTime(),
     },
 
     // 打开日历

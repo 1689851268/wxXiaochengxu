@@ -42,7 +42,7 @@
 </view>
 
 <!-- 日历 -->
-<van-calendar show="{{calendar}}" bind:close="closeCalendar" bind:confirm="onConfirm" type="range" allow-same-day color="rgb(7, 193, 96)" confirm-disabled-text="请选择结束时间" show-mark />
+<van-calendar show="{{calendar}}" bind:close="closeCalendar" bind:confirm="onConfirm" type="range" allow-same-day min-date="{{minDate}}" color="rgb(7, 193, 96)" confirm-disabled-text="请选择结束时间" show-mark />
 
 <!-- wxs -->
 <wxs module="fmt">
